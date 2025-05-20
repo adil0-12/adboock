@@ -19,4 +19,20 @@ class ProfileController extends Controller
         return view('profile.detailes',compact('profile'));
 
      }
+     public function create(Request $req){
+      $this->validate($req, [
+         'name' => 'required|min:3|max:10',
+         'email' => 'required|email|unique:profiles',
+         'pass'=>'min:6|required'
+     ]);
+     
+      $new = new Profile();
+      $new->name=$req->name;
+      $new->email=$req->email;
+      $new->password=$req->pass ;
+      $new->description=$req->desc;
+      $new->save();
+    
+      return Redirect()->route('profiles.index')->with('success', 'Profile created successfully!');
+     }
 }

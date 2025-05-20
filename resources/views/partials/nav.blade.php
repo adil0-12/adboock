@@ -15,14 +15,15 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/profile">profile</a>
-                </li>
+               
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('profiles.index')}}">profiles</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('settings')}}">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('new')}}">create profile</a>
                 </li>
             
             </ul>
