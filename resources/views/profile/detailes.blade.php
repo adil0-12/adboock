@@ -17,7 +17,10 @@
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="card profile-card shadow  mt-4">
             <div class="card-body text-center">
-                <img src="https://picsum.photos/id/77/450/300" alt="User Profile" class="rounded-circle profile-img me-2">
+                <img src="{{asset('images/ADIL.png')}}" 
+                alt="User Profile" 
+                class="rounded-circle profile-img me-6"
+                style="width: 150px; height: 150px; object-fit: cover;">
                 <h3 class="card-title mb-0">{{$profile->name}}</h3>
                 <p class="text-muted">Web Developer</p>
                 <p class="card-text">{{$profile->description}}</p>

@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Password;
 
 class ProfileController extends Controller
 {
     public function index(){
-        $profiles=Profile::paginate(9);
+        $profiles=Profile::latest()->paginate(9);
         return view('profile.Profiles',compact('profiles'));
      }
     
@@ -23,7 +24,16 @@ class ProfileController extends Controller
       $this->validate($req, [
          'name' => 'required|min:3|max:10',
          'email' => 'required|email|unique:profiles',
-         'pass'=>'min:6|required'
+         'pass'=>['min:6',
+         'required',
+         'confirmed',
+         Password::min(8)
+            ->mixedCase()
+            ->numbers()
+            ->symbols()
+            ,
+      ],
+         'desc'=>'required',
      ]);
      
       $new = new Profile();

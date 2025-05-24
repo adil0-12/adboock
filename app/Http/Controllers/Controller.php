@@ -9,6 +9,6 @@ use App\Models\Profile;
 
 abstract class Controller
 {
-    use ValidatesRequests;
+    use ValidatesRequests ;
 
 }

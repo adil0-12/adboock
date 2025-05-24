@@ -28,14 +28,10 @@
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                         
                             <div class="card-body p-5">
-                                <h2 class="text-uppercase text-center mb-4">Create an account</h2>
+                                <h2 class="text-uppercase text-center mb-4">Sign in</h2>
                                 <form action="{{ route('create') }}" method="POST">
                                     @csrf
-                                    <div data-mdb-input-init class="form-outline mb-3 ">
-                                        <label class="form-label" for="form3Example1cg">Your Full Name</label>
-                                        <input type="text" id="form3Example1cg" name="name" value="{{old('name')}}" class="form-control form-control-lg" />
-                                        
-                                    </div>
+                                    
 
                                     <div data-mdb-input-init class="form-outline mb-3 ">
                                         <label class="form-label" for="form3Example3cg">Your Email</label>
@@ -59,33 +55,15 @@
                                        
                                     </div>
 
-                                    <div data-mdb-input-init class="form-outline mb-3 ">
-                                        <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-
-                                        <input type="password" name="pass_confirmation" id="form3Example4cdg" class="form-control form-control-lg" />
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline mb-3 ">
-                                        <label class="form-label" for="form3Example4cdg">About Me</label>
-
-                                    <textarea  class="form-control" name="desc" >{{old('desc')}}</textarea>
-                                    </div
-
-                                    <div class="form-check d-flex justify-content-center mb-4">
-                                        <input class="form-check-input me-2" type="checkbox" value=""
-                                            id="form2Example3cg" />
-                                        <label class="form-check-label" for="form2Example3g">
-                                            I agree all statements in <a href="#!" class="text-body"><u>Terms of
-                                                    service</u></a>
-                                        </label>
-                                    </div>
+                                </div>
 
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" data-mdb-button-init data-mdb-ripple-init
-                                            class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                                            class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body">Login</button>
                                     </div>
 
-                                    <p class="text-center text-muted mt-3 mb-0">Have already an account? <a href="{{ route('Login')}}"
-                                            class="fw-bold text-body"><u>Login here</u></a></p>
+                                    <p class="text-center text-muted mt-3 mb-0"> You Don't Have an account? <a href="{{ route('new')}}"
+                                            class="fw-bold text-body"><u>Register here</u></a></p>
                                 </form>
                             </div>
                         
