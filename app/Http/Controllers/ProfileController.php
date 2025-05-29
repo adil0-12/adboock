@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -39,7 +40,7 @@ class ProfileController extends Controller
       $new = new Profile();
       $new->name=$req->name;
       $new->email=$req->email;
-      $new->password=$req->pass ;
+      $new->password=Hash::make($req->pass);
       $new->description=$req->desc;
       $new->save();
     

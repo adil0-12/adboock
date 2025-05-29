@@ -16,23 +16,52 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                
+
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('Login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('new') }}">create profile</a>
+                    </li>
+                @endguest
+
+
+
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('profiles.index')}}">profiles</a>
+                    <a class="nav-link" href="{{ route('profiles.index') }}">profiles</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('settings')}}">Settings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('new')}}">create profile</a>
-                </li>
-            
+
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
+            {{-- <li class="nav-item dropdown">
+                <button class="btn btn-expand dropdown-toggle" data-bs-toggle="dropdown" data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false">
+                  Dropdown
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </li> --}}
+            @auth
+                
+            <div class="btn-group">
+                <button type="button" class="btn btn-expand dropdown-toggle" data-bs-toggle="dropdown" >
+                  {{ auth()->user()->name }}
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                  <li><a class="dropdown-item" href="{{ route('settings') }}">Settings</a></li>
+                  
+                  
+                </ul>
+              
+            </div>
+              @endauth  
+
+            
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </nav>
-
-
